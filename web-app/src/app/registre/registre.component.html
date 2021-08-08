@@ -1,0 +1,129 @@
+<div class="container">
+    <form class="form" [formGroup]="registerForm">
+        <div class="row">
+            <h4>Account</h4>
+            <div class="input-group input-group-icon">
+                <input #name name ="name" type="text"  formControlName="lastName" placeholder="Last Name" />
+              
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerFormControl.lastName.valid && registerFormControl.lastName.touched">
+            Email is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #prenom name="prenom" type="text" placeholder="First Name" formControlName="firstName" />
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerFormControl.firstName.valid && registerFormControl.firstName.touched">
+            Email is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #email name="email" type="email" placeholder="Email Adress" formControlName="email" />
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                                *ngIf="!registerFormControl.email.valid && registerFormControl.email.touched">
+                                Email is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #password name="password" type="password" placeholder="Password" formControlName="password"/>
+                <div class="input-icon"><i class="fa fa-key"></i></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <h4>Date of Birth</h4>
+                <div class="input-group">
+                    <div class="col-third">
+                        <input #jj name="jj" type="text" placeholder="DD" />
+                    </div>
+                    <div class="col-third">
+                        <input #mm name="mm" type="text" placeholder="MM" />
+                    </div>
+                    <div class="col-third">
+                        <input #yy name="yy" type="text" placeholder="YYYY" />
+                    </div>
+                </div>
+            </div>
+           <!--  <div class="col-half">
+                <h4>Gender</h4>
+                <div class="input-group">
+                    <input type="radio" name="gender" value="male" id="gender-male" />
+                    <label for="gender-male">Male</label>
+                    <input type="radio" name="gender" value="female" id="gender-female" />
+                    <label for="gender-female">Female</label>
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+          <!--   <h4>Payment Details</h4>
+            <div class="input-group">
+                <input type="radio" name="payment-method" value="1" id="payment-method-card" checked="true" />
+                <label for="payment-method-card"><span><i class="fa fa-phone"></i>Annoucer</span></label>
+                <input type="radio" name="payment-method" value="0" id="payment-method-paypal" />
+                <label for="payment-method-paypal"> <span><i class="fa fa-car"></i>Driver</span></label>
+            </div> -->
+            <div class="input-group input-group-icon">
+                <input #lieuCirculation name="lieuCirculation" type="text" placeholder="traffic place" />
+                <div class="input-icon"><i class="fa fa-car"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input #cin name="cin" type="text" placeholder="Card Number" formControlName="cardNumber"/>
+                <div class="input-icon"><i class="fa fa-credit-card"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerFormControl.cardNumber.valid && registerFormControl.cardNumber.touched">
+            Email is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #profession name="profession" type="text" placeholder="Profession" formControlName="professionRequired" />
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerFormControl.professionRequired.valid && registerFormControl.professionRequired.touched">
+            profession is invalid
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerFormControl.professionOnlyLetters.valid && registerFormControl.professionOnlyLetters.touched">
+            profession is 
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" (click)="register({nom:name.value, prenom:prenom.value, email: email.value ,password:password.value, dateNaiss:concatener(yy.value,mm.value,jj.value),cin:cin.value,profession:profession.value,lieuCirculation:lieuCirculation.value})" *ngIf="registerForm.valid">login</button>
+        </div>
+        <div *ngIf="!registerForm.valid && registerForm.touched" class="alert alert-danger mt-4" role="alert">
+            Please Fill the form
+          </div>
+    </form>
+</div>
+<!--  <div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Books List</h2>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">prenom</th>
+            <th scope="col">email</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of liste; let i = index">
+            <th scope="row">{{book._id}}</th>
+            <td>{{book.nom}}</td>
+            <td>{{book.prenom}}</td>
+            <td>{{book.email}}</td>
+            <td class="text-center">
+             
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>  -->

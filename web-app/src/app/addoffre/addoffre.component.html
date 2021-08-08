@@ -1,0 +1,117 @@
+<div class="wrapper">
+   
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+      <div class="container">
+        <a [routerLink]="['/profil-agencies']"class="navbar-brand">
+          <img src="http://localhost:3305/file/{{profileagencies.image}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+               style="opacity: .8">
+     
+        </a>
+        
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/dashboard-agencies']"class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/profil-agencies']"class="nav-link">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/addoffres']"class="nav-link">Add Offres</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/traking']"class="nav-link">Traking</a>
+            </li>
+          </ul>
+  
+     
+        </div>
+        </div>
+    </nav>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Add Offres</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Add Offres</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content"  style=" display: block;
+    margin-left: auto;
+    margin-right: auto " >
+      <div class="row"  style=" display: block;
+      margin-left: auto;
+      margin-right: auto " >
+        <div class="col-md-6"  style=" display: block;
+        margin-left: auto;
+        margin-right: auto " >
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">General</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName"> Offre Description</label>
+                <input #description name="description" type="text" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Gouvernorate</label>
+                <input #gouvernorat name="gouvernorat" type="text" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Target</label>
+                <input #cible name="cible" type="text" id="inputName" class="form-control">
+           
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Start date</label>
+                <input #dateDeb name="dateDeb" type="text" id="inputClientCompany" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputProjectLeader">End date</label>
+                <input #dateFin name="dateFin" type="text" id="inputProjectLeader" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Cost</label>
+                <input #cout name="cout" type="text" id="inputName" class="form-control">
+              </div>
+              <button class="btn btn-success float-right" type="submit" (click)="addoffre({description:description.value, gouvernorat: gouvernorat.value ,cible:cible.value,dateDeb:dateDeb.value,dateFin:dateFin.value,cout:cout.value})" >Add</button>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+
+      </div>
+   
+    </section>
+    <!-- /.content -->
+  </div>
+  </div>
+  
+
+  <router-outlet></router-outlet>

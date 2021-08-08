@@ -1,0 +1,62 @@
+version: "3"
+services:
+    database:
+        image: mysql:5.7
+        restart: unless-stopped
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_DATABASE: "weadvert"
+            MYSQL_HOST: "localhost"
+            MYSQL_PORT: "3306"
+        ports:
+            - "56002:3306"
+        container_name: mysql-app
+        volumes:
+            - myapp:/weadvert.sql
+    
+    back-app:
+        build:
+            context: ./webservices
+        restart: unless-stopped
+        ports:
+            - "56001:3305"
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_USER: "root"
+            MYSQL_PASS: ""
+            MYSQL_DATABASE: "weadvert"
+            MYSQL_HOST: mysql-app
+            MYSQL_PORT: "3306"
+        depends_on:
+            - database
+        container_name: back-app
+
+    flutter-app:
+        build: 
+            context: ./flutter-app
+        restart: unless-stopped
+        ports:
+            - "56004:8080"
+        container_name: flutter-app
+
+    angular-app:
+        build:
+            context: ./web-app
+            dockerfile: Dockerfile
+        container_name: angular-app
+        ports:
+            - "56005:80"
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        ports:
+            - "56003:80"
+        environment:
+            PMA_HOST: mysql-app
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            PMA_PORT: 3306
+        depends_on:
+            - database
+volumes:
+    myapp:

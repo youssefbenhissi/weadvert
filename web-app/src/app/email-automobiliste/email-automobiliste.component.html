@@ -1,0 +1,21 @@
+<div class="container">
+    <form class="form" [formGroup]="sendemailForm">
+        <div class="row">
+            <h4>Enter your Email</h4>
+           
+            <div class="input-group input-group-icon">
+                <input #email name="email" type="email" placeholder="Email Adress" formControlName="email" />
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+            </div>
+          
+        </div>
+       
+        
+        <div class="row">
+            <button type="submit" (click)="sendemail({email: email.value})"  *ngIf="sendemailForm.valid">Confirm</button>
+        </div>
+        <div *ngIf="!sendemailForm.valid && sendemailForm.touched" class="alert alert-danger mt-4" role="alert">
+            Please Fill the form
+          </div>
+    </form>
+</div>

@@ -1,0 +1,203 @@
+name: pim
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+dependency_overrides:
+  intl: 0.17.0
+  date_range_picker:
+    git:
+      url: https://github.com/LempereurBenjamin/date_range_picker
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_facebook_login: ^1.2.0
+  
+  shared_preferences: ^0.5.12+4
+  flutter_windowmanager: ^0.0.2
+  google_sign_in: ^4.5.1
+  smooth_star_rating: 1.1.1 
+  font_awesome_flutter: ^8.11.0
+  local_auth: ^0.6.3+4
+  # flutter_secure_storage: ^3.3.3
+  easy_localization: ^2.3.3
+  http: ^0.12.2
+  dio: ^3.0.10
+  fluttertoast: ^7.1.8
+  auto_size_text: ^2.0.2
+  flare_flutter: ^2.0.6
+  animate_do: ^1.7.3
+  tflite: ^1.0.5
+  fluttericon: ^1.0.7
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.0
+  flutter_svg: ^0.19.1
+  g_captcha: ^1.0.0
+  bubble_bottom_bar: ^1.2.0
+  flutter_datetime_picker: ^1.5.0
+  image_picker: ^0.6.7+22
+  uuid: 2.2.2
+  toast: ^0.1.5
+  flutter_screenutil: ^4.0.3+3
+  carousel_slider: ^2.2.1
+  shape_of_view: ^1.0.2
+  readmore: ^1.0.0
+  firebase_admob: ^0.9.3+2
+  admob_flutter: ^1.0.1
+  audioplayers: ^0.17.0
+  google_fonts: ^1.1.1
+  velocity_x: ^1.0.1
+  alan_voice: ^2.0.11
+  flutter_map:
+  user_location: ^0.1.3
+  loading: ^1.0.2
+  get: ^3.25.6
+  getwidget: ^1.2.4
+
+  #flutter_local_notifications: ^1.3.0
+  keyboard_actions: ^3.3.0+1
+  circular_countdown_timer: ^0.0.8
+  rflutter_alert: ^1.0.8
+  lottie: ^0.7.0+1
+  progress_state_button: "^1.0.2"
+  dynamic_theme: ^1.0.1
+  flutter_tawk: ^0.0.5
+  flutter_icons: ^1.1.0
+  page_transition: ^1.1.7+6
+  animated_bottom_navigation_bar: ^0.2.1
+  fl_chart: ^0.12.2
+  percent_indicator: "^2.1.7+2"
+  flutter_credit_card: ^0.1.3
+  stripe_payment: ^1.0.7
+  progress_dialog: ^1.2.2
+  transformer_page_view: ^0.1.6
+  line_icons: ^1.3.2
+  cloud_firestore: ^0.12.6
+  date_range_picker: ^1.0.3
+  pdf: ^1.5.0
+  path_provider: ^1.6.5
+  path:
+  camera:
+  xml2json: ^4.3.0
+  flutter_full_pdf_viewer: ^1.0.6
+  firebase_storage: ^3.1.5
+  firebase_auth: ^0.13.0
+  firebase_messaging: ^6.0.13
+  flutter_local_notifications: ^1.4.3
+  cached_network_image: ^2.1.0+1
+  intl_phone_number_input: ^0.6.0
+  flutter_swiper: ^1.1.6
+  connectivity: ^0.4.6+2
+  image_cropper: ^1.2.1
+  mailer: ^3.3.0
+  photo_view: ^0.9.2
+  twilio_flutter: ^0.0.5
+  url_launcher: ^5.4.10
+  geolocator: ^5.3.0
+  barcode_scan: "^1.0.0"
+  #flutter_launch: ^0.2.0
+  flutter_background_geolocation: ^1.11.1
+  flutter_liquidcore: ^1.1.1
+  flutter_easyrefresh: ^2.1.8
+  flutter_map_marker_popup:
+  flutter_echarts: ^1.5.0
+  imageview360: ^1.0.0
+  highlighter_coachmark: ^0.0.3
+  tutorial_coach_mark: ^1.0.0
+  flutter_offline: ^0.3.0
+  autocomplete_textfield: ^1.7.3
+  appcenter:
+  appcenter_analytics:
+  appcenter_crashes:
+    
+  mockito: ^4.1.2
+
+  #flutter_credit_card: ^0.1.3
+  #admob_flutter: ^1.0.1
+  flutter_localizations: 
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.14.4 
+  dart_dot_reporter: ^1.0.3
+  flutter_launcher_icons: ^0.8.0
+
+flutter_icons:
+  image_path: "assets/icons/logo.png"
+  android: true
+  ios: true
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/languages/
+    - assets/images/
+    - assets/icons/
+    - assets/
+    - assets/lottie/
+  fonts:
+   - family: CM Sans Serif
+     fonts:
+       - asset: assets/fonts/cm_sans_serif_2012.ttf
+  #   - images/a_dot_ham.jpeg
+
+   - family: avenir
+     fonts:
+        - asset: assets/fonts/avenirMedium.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+   - family: ubuntu
+     fonts:
+        - asset: assets/fonts/Ubuntu-Regular.ttf
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,0 +1,409 @@
+<div class="wrapper">
+   
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a [routerLink]="['/profil-agencies']"class="navbar-brand">
+        <img src="http://localhost:3305/file/{{profileagencies.image}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+   
+      </a>
+      
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/dashboard-agencies']"class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/profil-agencies']"class="nav-link">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/addoffres']"class="nav-link">Add Offres</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/traking']"class="nav-link">Traking</a>
+          </li>
+        </ul>
+
+   
+      </div>
+
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <!-- Messages Dropdown Menu -->
+  
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href="#" role="button"><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <!-- /.navbar -->
+  
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="../../index3.html" class="brand-link">
+        <img src="../../assets/images/AdminLTELogo.png"
+             alt="AdminLTE Logo"
+             class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light" style="font-size:20px;">We Advert</span>
+      </a>
+  
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="../../assets/images/logo-delice-holding-20141016-092918.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info" >
+            <span>
+            <a href="#" class="d-block">{{ profileagencies.entreprise}}</a>
+            </span>
+          </div>
+        </div>
+  
+     
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Profile</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a [routerLink]="['/dashboard-agencies']">Home</a></li>
+                <li class="breadcrumb-item active">Agencie Profile</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+     
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+  
+              <!-- Profile Image -->
+              <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                  <div class="text-center">
+                    <img class="profile-user-img img-fluid img-circle"
+                    src="http://localhost:3305/file/{{profileagencies.image}}"
+                         alt="User profile picture">
+                  </div>
+  
+                  <h3 class="profile-username text-center">{{ profileagencies.entreprise}}</h3>
+  
+                  <p class="text-muted text-center">Company</p>
+  
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                      <b>Returned</b> <a class="float-right">5,000 DT</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>mileage</b> <a class="float-right">10k</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Friends</b> <a class="float-right">13,287</a>
+                    </li>
+                  </ul>
+  
+                  <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+  
+              <!-- About Me Box -->
+             
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+              <div class="card">
+                <div class="card-header p-2">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Settings</a></li>
+           
+                  </ul>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content">
+                  
+                  <!--       <div class="card-header border-transparent">
+                          <h3 class="card-title">list of offers</h3>
+          
+                   
+                        </div>
+                        <div class="card-body p-0" style="display: block;">
+                        <div class="card">
+                          <div class="table-responsive">
+                          <div class="card-body p-0">
+                            <table class="table table-striped projects">
+                                <thead>
+                                  <tr>
+                                    <th style="width: 20%">
+                                      Product
+                                    </th>
+                                    <th style="width: 8%" class="text-center">
+                                      Governorate
+                                    </th>                    
+                                  
+                                    <th style="width: 30%">
+                                      Our Drivers
+                                  </th>  
+                                  
+                                    <th>
+                                      Date
+                                  </th>
+                                    <th style="width: 1%">
+                                      Price
+                                    </th>
+                                    <th style="width: 20%">
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let offre of offreagencies">
+                                        <td>
+                                          {{offre.description}}
+                                        </td>
+                                        <td>
+                                            <a>
+                                              {{offre.gouvernorat}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"  *ngFor="let candidaimg of candidatureimages">
+                                                    <img alt="Avatar" class="table-avatar" src="http://localhost:3305/file/{{candidaimg .photo}}" style="width: 50px;height: 50px;">
+                                                </li>
+                                               
+                                            </ul>
+                                        </td>
+                                        <td class="project_progress">
+                                     
+                                            <small>
+                                              {{offre.dateDeb|date:'mediumDate'}}
+                                            </small>
+                                        </td>
+                                        <td class="project-state">
+                                            <span class="badge badge-success">{{offre.cout}} DT</span>
+                                        </td>
+                                        <td class="project-actions text-right">
+                                            <a class="btn btn-primary btn-sm" [routerLink]="['/liste-candidature/', offre.idOffre]">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                View
+                                            </a>
+                                            <a class="btn btn-info btn-sm" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                  
+                                </tbody>
+                            </table>
+                          </div>
+                          </div>
+                    
+                        </div>
+                      </div> -->
+                        <!-- 
+                      
+                          <div class="table-responsive">
+                            <table class="table m-0">
+                              <thead>
+                              <tr>
+                                <th>Order ID</th>
+                                <th>Company</th>
+                                <th>Price</th>
+                                <th>Start date</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let offre of offreagencies">
+                                
+                                <td><a [routerLink]="['/liste-candidature/', offre.idOffre]">{{offre.idOffre}}</a></td>
+                                <td >{{offre.description}}</td>
+                                <td><span class="badge badge-success">{{offre.cout}} DT</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#00a65a" data-height="20">{{offre.dateDeb|date:'mediumDate'}}</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                                <td>Ooredoo</td>
+                                <td><span class="badge badge-warning">Processing</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                                <td>Orange</td>
+                                <td><span class="badge badge-danger">rejected</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                </td>
+                              </tr>
+                         
+                              <tr>
+                                <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                                <td>Peak sports</td>
+                                <td><span class="badge badge-warning">Processing</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                                <td>Smart gym</td>
+                                <td><span class="badge badge-danger">rejected</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                                <td>Dabchy</td>
+                                <td><span class="badge badge-success">accepted</span></td>
+                                <td>
+                                  <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          
+                        
+                        -->
+
+                    <!--     <div class="card-footer clearfix" style="display: block;">
+                         <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> 
+                          <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Offers</a>
+                        </div>
+                   /.card-footer -->
+                    
+  
+                    <div class="active tab-pane" id="activity">
+                      <form class="form-horizontal">
+                        <div class="form-group row">
+                          <label for="inputName" class="col-sm-2 col-form-label">Company Name</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputName" placeholder="Name">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">phone number</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="phone number">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputName2" class="col-sm-2 col-form-label">Location</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName2" placeholder="Location">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                          </div>
+                        </div>
+                      
+                     
+                        <div class="form-group row">
+                          <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-content -->
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+   
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  <!--   <footer class="main-footer">
+      <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.5
+      </div>
+      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+      reserved.
+    </footer> -->
+  
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  
+  <router-outlet></router-outlet>

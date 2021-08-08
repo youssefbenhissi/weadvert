@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">pim</string>
+    <string name="pim"></string>
+    <string name="facebook_app_id">221001663045214</string> 
+    <string name="fb_login_protocol_scheme">fb221001663045214</string>
+</resources>

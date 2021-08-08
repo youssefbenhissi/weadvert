@@ -1,0 +1,55 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+StateError: Bad state: No element
+
+```
+#0      List.first (dart:core-patch/growable_array.dart:332:5)
+#1      ResidentRunner.invokeFlutterExtensionRpcRawOnFirstIsolate (package:flutter_tools/src/resident_runner.dart:862:12)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.0.2, on Microsoft Windows [version 10.0.19042.867], locale fr-FR)
+    • Flutter version 2.0.2 at C:\flutter
+    • Framework revision 8962f6dc68 (7 days ago), 2021-03-11 13:22:20 -0800
+    • Engine revision 5d8bf811b3
+    • Dart version 2.12.1
+
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.2)
+    • Android SDK at C:\Users\DELL\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 4.1.0)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] VS Code (version 1.54.3)
+    • VS Code at C:\Users\DELL\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.20.0
+
+[✓] Connected device (3 available)
+    • Android SDK built for x86 (mobile) • emulator-5554 • android-x86    • Android 7.1.1 (API 25) (emulator)
+    • Chrome (web)                       • chrome        • web-javascript • Google Chrome 89.0.4389.90
+    • Edge (web)                         • edge          • web-javascript • Microsoft Edge 89.0.774.54
+
+! Doctor found issues in 1 category.
+```

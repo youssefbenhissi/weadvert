@@ -1,0 +1,69 @@
+<div class="container">
+    <form class="form"  [formGroup]=" registerAgForm">
+        <div class="row">
+            <h4>Account</h4>
+            <div class="input-group input-group-icon">
+                <input #entreprise name ="entreprise" type="text"  formControlName="name" placeholder="Company Name" />
+               
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerAgFormControl.name.valid && registerAgFormControl.name.touched">
+            Company Name is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #email name="email" type="email" placeholder="Email Adress" formControlName="email"/>
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerAgFormControl.email.valid && registerAgFormControl.email.touched">
+            Email is invalid
+            </div>
+            <div class="input-group input-group-icon">
+                <input #password name="password" type="password" placeholder="Password" formControlName="password"/>
+                <div class="input-icon"><i class="fa fa-key"></i></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+            *ngIf="!registerAgFormControl.password.valid && registerAgFormControl.password.touched">
+            Password is invalid
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button type="submit" (click)="registeragencies({entreprise:entreprise.value, email: email.value ,password:password.value})" *ngIf="registerAgForm.valid">login</button>
+        </div>
+        <div *ngIf="!registerAgForm.valid && registerAgForm.touched" class="alert alert-danger mt-4" role="alert">
+          Please Fill the form
+        </div>
+    </form>
+</div>
+<!--  <div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Books List</h2>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">prenom</th>
+            <th scope="col">email</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of liste; let i = index">
+            <th scope="row">{{book._id}}</th>
+            <td>{{book.nom}}</td>
+            <td>{{book.prenom}}</td>
+            <td>{{book.email}}</td>
+            <td class="text-center">
+             
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>  -->

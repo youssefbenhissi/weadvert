@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22847427352",
+    "project_id": "pimsim-74895",
+    "storage_bucket": "pimsim-74895.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22847427352:android:e43cce367aa9e7112a046d",
+        "android_client_info": {
+          "package_name": "com.example.pim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22847427352-2hq5mepo83eg4sqkq7cqc5tk9eep048i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs4jUFaLrrUg8y_vkm4WfBg28ASk1BSss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22847427352-2hq5mepo83eg4sqkq7cqc5tk9eep048i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

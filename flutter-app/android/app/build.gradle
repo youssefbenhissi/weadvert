@@ -1,0 +1,86 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
+
+Project background_geolocation = project(':flutter_background_geolocation')
+apply from: "${background_geolocation.projectDir}/background_geolocation.gradle"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.pim"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+    aaptOptions{
+        noCompress "tflite"
+        noCompress "lite"
+    }
+   packagingOptions {
+    pickFirst 'lib/arm64-v8a/libtensorflowlite_jni.so'
+    pickFirst 'lib/x86/libtensorflowlite_jni.so'
+    pickFirst 'lib/armeabi-v7a/libtensorflowlite_jni.so'
+    pickFirst 'lib/x86_64/libtensorflowlite_jni.so'
+}
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly'
+    implementation 'com.google.firebase:firebase-messaging:19.1.1'
+    implementation "androidx.browser:browser:1.2.0"
+    implementation 'com.google.firebase:firebase-bom:26.8.0'
+    def appCenterSdkVersion = '4.1.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+}
